@@ -1,0 +1,37 @@
+# Scala CLI
+.scala-build/
+.bloop/
+
+# SBT
+target/
+project/target/
+dist/
+*.jar
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*.iml
+
+# Compiled files
+*.class
+*.o
+*.so
+
+# Package files
+*.zip
+*.tar.gz
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Temporary files
+*.tmp
+.metals/
