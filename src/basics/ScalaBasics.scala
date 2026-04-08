@@ -4,7 +4,9 @@ import java.time.LocalDate
 
 // Unit means this function does not return a useful value, similar to void in Java.
 @main
-def hello(): Unit =
+def basics(): Unit =
+
+//
   //val creates an immutable value
   val language = "Scala"
   println(s"val example: $language")

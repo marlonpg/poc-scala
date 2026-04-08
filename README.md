@@ -1,5 +1,13 @@
 Reference: https://github.com/diegopacheco/tech-resources/blob/master/src/scala-resources.md
 
+## Local Project
+
+Run the first basics lesson with:
+
+```bash
+scala-cli run src/basics/Variables.scala
+```
+
 ### Core Scala
 
 * Scala Basics
