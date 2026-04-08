@@ -57,9 +57,18 @@ def basics(): Unit =
 	def applyFunction(f: Int => Int, value: Int): Int =
 		f(value)
 	println(s"applyFunction(square, 6) = ${applyFunction(square, 6)}")
-    
-    //A recursive function
-    def factorial(n: Int): Int =
-        if n == 0 then 1
-        else n * factorial(n - 1)
-    println(s"factorial(5) = ${factorial(5)}")
+
+	//A recursive function
+	def factorial(n: Int): Int =
+		if n == 0 then 1
+		else n * factorial(n - 1)
+	println(s"factorial(5) = ${factorial(5)}")
+
+	println("Classes")
+
+	class Person(val name: String, var age: Int):
+		def birthday(): Unit =
+			age = age + 1
+
+		def description: String =
+			s"$name is $age years old"
