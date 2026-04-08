@@ -6,24 +6,60 @@ import java.time.LocalDate
 @main
 def basics(): Unit =
 
-//
-  //val creates an immutable value
-  val language = "Scala"
-  println(s"val example: $language")
+	println("Scala Basics")
 
-  //var allows reassignment
-  var level = 1
-  println(s"var before change: $level")
-  level = 2
-  println(s"var after change: $level")
+	println("Variables and Values")
+	// val creates an immutable value
+	val language = "Scala"
+	println(s"val example: $language")
 
-  val age: Int = 30
-  val price: Double = 99.9
-  println(s"number examples: age = $age, price = $price")
+	// var allows reassignment
+	var level = 1
+	println(s"var before change: $level")
+	level = 2
+	println(s"var after change: $level")
 
-  val firstName = "Gamba"
-  val message = s"string example: Hello, $firstName"
-  println(message)
+	val age: Int = 30
+	val price: Double = 99.9
+	println(s"number examples: age = $age, price = $price")
 
-  val today = LocalDate.now()
-  println(s"date example: $today")
+	val firstName = "Gamba"
+	val message = s"string example: Hello, $firstName"
+	println(message)
+
+	val today = LocalDate.now()
+	println(s"date example: $today")
+
+	println("Functions")
+
+	//A simple function
+	def add(a: Int, b: Int): Int =
+		a + b
+	println(s"add(2, 3) = ${add(2, 3)}")
+
+	//A function that returns Unit (no meaningful value)
+	def printMessage(msg: String): Unit =
+		println(s"Message: $msg")
+
+	printMessage("This is a message")
+
+	//A function with a default parameter
+	def greet(name: String = "Guest"): String =
+		s"Hello, $name!"
+	println(greet())
+	println(greet("Alice"))
+
+	//An anonymous function (lambda)
+	val square: Int => Int = x => x * x
+	println(s"square(5) = ${square(5)}")
+
+	//A higher-order function that takes another function as a parameter
+	def applyFunction(f: Int => Int, value: Int): Int =
+		f(value)
+	println(s"applyFunction(square, 6) = ${applyFunction(square, 6)}")
+    
+    //A recursive function
+    def factorial(n: Int): Int =
+        if n == 0 then 1
+        else n * factorial(n - 1)
+    println(s"factorial(5) = ${factorial(5)}")
