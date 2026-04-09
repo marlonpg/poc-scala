@@ -72,3 +72,7 @@ def basics(): Unit =
 
 		def description: String =
 			s"$name is $age years old"
+	val person = Person("Gamba", 30)
+	println(person.description)
+	person.birthday()
+	println(s"After birthday: ${person.description}")
