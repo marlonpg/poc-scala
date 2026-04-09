@@ -76,3 +76,16 @@ def basics(): Unit =
 	println(person.description)
 	person.birthday()
 	println(s"After birthday: ${person.description}")
+	// A trait is like an interface in Java, but it can also have concrete methods and fields.
+	// Trait with both abstract and concrete members
+	trait Animal:
+		def name: String          // abstract
+		def sound: String         // abstract
+		def describe: String =    // concrete - reuses abstract members
+			s"$name says $sound"
+
+	class Dog(val name: String) extends Animal:
+		def sound: String = "Woof"
+	
+	val dog = Dog("Rex")
+	println(dog.describe)
