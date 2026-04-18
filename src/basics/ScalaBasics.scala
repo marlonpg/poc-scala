@@ -90,8 +90,24 @@ def basics(): Unit =
 	val dog = Dog("Rex")
 	println(dog.describe)
 
-	// Object in Scala means a singleton: only one instance exists.
+	//Object in Scala means a singleton: only one instance exists.
 	object Logger:
 		def info(message: String): Unit =
 			println(s"[INFO] $message")
 	Logger.info("This is an info message")
+
+	//Case classes are ideal for immutable data models.
+	case class User(name: String, age: Int) {
+		println("Case Classes in Scala") }
+
+	// create instances without new (apply is generated)
+	val user1 = User("Gamba", 30)
+	val user2 = User("Gamba", 30)
+	println(s"user1 = $user1")
+
+	//Structural equality (compares values, not references)
+	println(s"user1 == user2: ${user1 == user2}")
+
+	//Immutability + copy for updates
+	val older = user1.copy(age = 31)
+	println(s"older = $older")
