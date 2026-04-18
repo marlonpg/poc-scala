@@ -89,3 +89,9 @@ def basics(): Unit =
 	
 	val dog = Dog("Rex")
 	println(dog.describe)
+
+	// Object in Scala means a singleton: only one instance exists.
+	object Logger:
+		def info(message: String): Unit =
+			println(s"[INFO] $message")
+	Logger.info("This is an info message")
