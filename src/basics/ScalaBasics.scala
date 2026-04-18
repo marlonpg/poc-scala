@@ -111,3 +111,25 @@ def basics(): Unit =
 	//Immutability + copy for updates
 	val older = user1.copy(age = 31)
 	println(s"older = $older")
+
+	case class Product(id: Int, name: String, price: Double)
+	case class Circle(radius: Double)
+	case class Rectangle(width: Double, height: Double)
+
+	//Product decomposition for pattern matching
+	def area(shape: Any): Double = shape match
+		case Circle(r) => math.Pi * r * r
+		case Rectangle(w, h) => w * h
+		case _ => 0.0
+
+	println(s"Circle area = ${area(Circle(2.0))}")
+	println(s"Rectangle area = ${area(Rectangle(3.0, 4.0))}")
+
+	//Useful in collections
+	val products = List(
+		Product(1, "Keyboard", 100.0),
+		Product(2, "Mouse", 50.0),
+		Product(3, "Monitor", 900.0)
+	)
+	val expensive = products.filter(_.price > 100.0)
+	println(s"Expensive products = $expensive")
