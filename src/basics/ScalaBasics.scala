@@ -133,3 +133,18 @@ def basics(): Unit =
 	)
 	val expensive = products.filter(_.price > 100.0)
 	println(s"Expensive products = $expensive")
+
+	//Case objects are singleton values often used with pattern matching.
+	sealed trait OrderStatus
+	case object Pending extends OrderStatus
+	case object Paid extends OrderStatus
+	case object Shipped extends OrderStatus
+
+	def statusMessage(status: OrderStatus): String = status match
+		case Pending => "Order is pending payment"
+		case Paid => "Order has been paid"
+		case Shipped => "Order is on the way"
+
+	println(statusMessage(Pending))
+	println(statusMessage(Paid))
+	println(statusMessage(Shipped))
