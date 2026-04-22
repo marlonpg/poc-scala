@@ -7,6 +7,10 @@ case object Cash extends PaymentMethod
 case class CreditCard(number: String) extends PaymentMethod
 case class Pix(key: String) extends PaymentMethod
 
+sealed trait Shape
+case class Circle(radius: Double) extends Shape
+case class Rectangle(width: Double, height: Double) extends Shape
+
 @main
 def sealedTraits(): Unit =
     println("Sealed Traits in Scala")
@@ -15,7 +19,14 @@ def sealedTraits(): Unit =
         case Cash => "Paying with cash"
         case CreditCard(number) => s"Paying with credit card ending in ${number.takeRight(4)}"
         case Pix(key) => s"Paying with PIX key: $key"
-        
-        println(paymentLabel(Cash))
-        println(paymentLabel(CreditCard("1234567812345678")))
-        println(paymentLabel(Pix("gamba@email.com")))
+    
+    def area(shape: Shape): Double = shape match
+        case Circle(radius) => math.Pi * radius * radius
+        case Rectangle(width, height) => width * height
+
+    println(paymentLabel(Cash))
+    println(paymentLabel(CreditCard("1234567812345678")))
+    println(paymentLabel(Pix("gamba@email.com")))
+
+    println(s"Circle area = ${area(Circle(2.0))}")
+    println(s"Rectangle area = ${area(Rectangle(3.0, 4.0))}")
