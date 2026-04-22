@@ -15,3 +15,7 @@ def sealedTraits(): Unit =
         case Cash => "Paying with cash"
         case CreditCard(number) => s"Paying with credit card ending in ${number.takeRight(4)}"
         case Pix(key) => s"Paying with PIX key: $key"
+        
+        println(paymentLabel(Cash))
+        println(paymentLabel(CreditCard("1234567812345678")))
+        println(paymentLabel(Pix("gamba@email.com")))
