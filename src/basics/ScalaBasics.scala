@@ -148,3 +148,17 @@ def basics(): Unit =
 	println(statusMessage(Pending))
 	println(statusMessage(Paid))
 	println(statusMessage(Shipped))
+
+	println("Pattern Matching")
+
+	def describe(value: Any): String = value match
+		case n: Int if n > 0 => s"positive int: $n"
+		case 0 => "zero"
+		case s: String => s"string: $s"
+		case true => "boolean true"
+		case _ => "something else"
+
+	println(describe(10))
+	println(describe(0))
+	println(describe("scala"))
+	println(describe(true))
