@@ -151,11 +151,17 @@ def basics(): Unit =
 
 	println("Pattern Matching")
 
+	// Match by type, exact value, and with guards.
 	def describe(value: Any): String = value match
+		// Type pattern + guard
 		case n: Int if n > 0 => s"positive int: $n"
+		// Exact value pattern
 		case 0 => "zero"
+		// Type pattern
 		case s: String => s"string: $s"
+		// Another exact value pattern
 		case true => "boolean true"
+		// Fallback (default case)
 		case _ => "something else"
 
 	println(describe(10))
