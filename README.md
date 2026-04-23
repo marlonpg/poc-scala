@@ -10,15 +10,15 @@ scala-cli run src/basics/Variables.scala
 
 ### Core Scala
 
-* Scala Basics
-  * Variables
-  * Functions
-  * Classes
-  * Traits
-  * Objects
-  * Case Classes
-  * Case Objects
-  * Sealed Traits
+* [X] Scala Basics
+  * [X] Variables
+  * [X] Functions
+  * [X] Classes
+  * [X] Traits
+  * [X] Objects
+  * [X] Case Classes
+  * [X] Case Objects
+  * [X] Sealed Traits
 * Pattern Matching
 * Tuples
 * Generics
