@@ -168,3 +168,20 @@ def basics(): Unit =
 	println(describe(0))
 	println(describe("scala"))
 	println(describe(true))
+
+	// Destructuring a case class
+	def productLabel(p: Product): String = p match
+		case Product(id, name, price) => s"#$id $name -> $$${price}"
+	println(productLabel(Product(10, "Desk", 250.0)))
+
+	// Matching a list shape
+	def listInfo(list: List[Int]): String = list match
+		case head :: tail => s"head=$head, tailSize=${tail.size}"
+		case Nil => "empty list"
+	println(listInfo(List(1, 2, 3)))
+	println(listInfo(Nil))
+
+	// Matching tuples
+	def tupleInfo(t: (String, Int)): String = t match
+		case (name, age) => s"name=$name age=$age"
+	println(tupleInfo(("Gamba", 30)))
