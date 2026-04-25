@@ -19,7 +19,7 @@ scala-cli run src/basics/Variables.scala
   * [X] Case Classes
   * [X] Case Objects
   * [X] Sealed Traits
-* Pattern Matching
+* [X] Pattern Matching
 * Tuples
 * Generics
 * Monads
