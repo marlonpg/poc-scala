@@ -185,3 +185,35 @@ def basics(): Unit =
 	def tupleInfo(t: (String, Int)): String = t match
 		case (name, age) => s"name=$name age=$age"
 	println(tupleInfo(("Gamba", 30)))
+
+	println("Tuples in Scala")
+
+	// Create tuples (immutable, fixed size, fixed types)
+	val pair = ("Alice", 30)
+	val triple = (1, "hello", 3.14)
+	println(s"pair = $pair")
+	println(s"triple = $triple")
+
+	// Access by position (1-indexed)
+	println(s"pair._1 = ${pair._1}")
+	println(s"pair._2 = ${pair._2}")
+
+	// Destructuring / unpacking
+	val (pairName, pairAge) = pair
+	println(s"name=$pairName, age=$pairAge")
+
+	// Pattern matching on tuples
+	def describeTriple(t: (Int, String, Double)): String = t match
+		case (num, str, dbl) => s"num=$num, str=$str, dbl=$dbl"
+
+	println(describeTriple(triple))
+
+	// Functions returning tuples
+	def swap(t: (String, Int)): (Int, String) =
+		(t._2, t._1)
+
+	println(s"swapped = ${swap(pair)}")
+
+	// Tuples in collections
+	val pairList = List(("Bob", 25), ("Carol", 35), ("Dave", 28))
+	pairList.foreach { case (pname, page) => println(s"$pname is $page") }
