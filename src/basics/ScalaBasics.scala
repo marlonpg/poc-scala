@@ -217,3 +217,20 @@ def basics(): Unit =
 	// Tuples in collections
 	val pairList = List(("Bob", 25), ("Carol", 35), ("Dave", 28))
 	pairList.foreach { case (pname, page) => println(s"$pname is $page") }
+
+	println("Generics")
+
+	// Generic function: works with any type T
+	def first[T](items: List[T]): Option[T] =
+		items.headOption
+
+	println(s"first int = ${first(List(1, 2, 3))}")
+	println(s"first string = ${first(List("a", "b", "c"))}")
+
+	// Generic class: Box can hold any type
+	case class Box[T](value: T)
+
+	val intBox = Box(123)
+	val stringBox = Box("scala")
+	println(s"intBox = $intBox")
+	println(s"stringBox = $stringBox")

@@ -21,7 +21,7 @@ scala-cli run src/basics/Variables.scala
   * [X] Sealed Traits
 * [X] Pattern Matching
 * [X] Tuples
-* Generics
+* [X] Generics
 * Monads
   * Option
   * Try
