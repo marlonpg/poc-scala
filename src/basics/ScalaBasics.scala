@@ -234,3 +234,13 @@ def basics(): Unit =
 	val stringBox = Box("scala")
 	println(s"intBox = $intBox")
 	println(s"stringBox = $stringBox")
+	
+	println("Monads in Scala")
+
+	// Option: represents a value that may or may not exist
+	def divide(a: Int, b: Int): Option[Int] =
+		if b == 0 then None else Some(a / b)
+	
+	println("Option:")
+	println(divide(10, 2))  // Some(5)
+	println(divide(10, 0))  // None
