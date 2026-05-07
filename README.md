@@ -22,7 +22,7 @@ scala-cli run src/basics/Variables.scala
 * [X] Pattern Matching
 * [X] Tuples
 * [X] Generics
-* Monads
+* [X] Monads
   * Option
   * Try
   * Either
