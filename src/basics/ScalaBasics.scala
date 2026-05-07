@@ -236,11 +236,28 @@ def basics(): Unit =
 	println(s"stringBox = $stringBox")
 	
 	println("Monads in Scala")
+	//Informally, a monad in Scala is a "wrapper" or "container" that allows you to chain operations together while managing side effects like optionality, errors, or asynchronicity
 
-	// Option: represents a value that may or may not exist
+	// ption: represents a value that may or may not exist
 	def divide(a: Int, b: Int): Option[Int] =
 		if b == 0 then None else Some(a / b)
 	
 	println("Option:")
 	println(divide(10, 2))  // Some(5)
 	println(divide(10, 0))  // None
+
+	//chaining with flatMap
+	val result = divide(20, 2).flatMap(x => divide(x, 2))
+	println(s"flatMap result = $result")  // Some(5)
+
+	//Try: represents a computation that may throw an exception
+	import scala.util.Try
+
+	def parseInt(s: String): Try[Int] = Try(s.toInt)
+
+	println("\nTry:")
+	println(parseInt("42"))   // Success(42)
+	println(parseInt("abc"))    // Failure(...)
+
+	val tryChain = parseInt("10").flatMap(x => parseInt("5").map(_ + x))
+	println(s"Try chain = $tryChain")  // Success(15)
