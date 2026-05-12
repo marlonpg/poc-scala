@@ -23,7 +23,7 @@ scala-cli run src/basics/Variables.scala
 * [X] Tuples
 * [X] Generics
 * [X] Monads
-  * Option
+  * [X] Option
   * Try
   * Either
   * Future
