@@ -267,3 +267,15 @@ def basics(): Unit =
 	println(safeDivide(10, 2))                           // Success(5)
 	println(safeDivide(10, 0))                           // Failure(...)
 	println(s"fallback = ${safeDivide(10, 0).getOrElse(0)}") // 0
+
+	//Either: Left = error, Right = success
+	def parseAge(input: String): Either[String, Int] =
+		if input.forall(_.isDigit) then Right(input.toInt)
+		else Left("invalid age")
+
+	println("\nEither:")
+	println(parseAge("25"))   // Right(25)
+	println(parseAge("abc"))  // Left(invalid age)
+
+	val adultCheck = parseAge("20").map(age => age >= 18)
+	println(s"adultCheck = $adultCheck") // Right(true)
