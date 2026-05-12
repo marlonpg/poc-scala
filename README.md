@@ -24,8 +24,8 @@ scala-cli run src/basics/Variables.scala
 * [X] Generics
 * [X] Monads
   * [X] Option
-  * Try
-  * Either
+  * [X] Try
+  * [X] Either
   * Future
   * List
   * Map
