@@ -261,3 +261,9 @@ def basics(): Unit =
 
 	val tryChain = parseInt("10").flatMap(x => parseInt("5").map(_ + x))
 	println(s"Try chain = $tryChain")  // Success(15)
+
+	// try example with fallback
+	def safeDivide(a: Int, b: Int): Try[Int] = Try(a / b)
+	println(safeDivide(10, 2))                           // Success(5)
+	println(safeDivide(10, 0))                           // Failure(...)
+	println(s"fallback = ${safeDivide(10, 0).getOrElse(0)}") // 0
