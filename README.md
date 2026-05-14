@@ -26,7 +26,7 @@ scala-cli run src/basics/Variables.scala
   * [X] Option
   * [X] Try
   * [X] Either
-  * Future
+  * [X] Future
   * List
   * Map
 * For Comprehensions  
