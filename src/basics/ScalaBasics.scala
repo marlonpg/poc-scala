@@ -218,6 +218,22 @@ def basics(): Unit =
 	val pairList = List(("Bob", 25), ("Carol", 35), ("Dave", 28))
 	pairList.foreach { case (pname, page) => println(s"$pname is $page") }
 
+	println("List in Scala")
+
+	// List is immutable by default
+	val numbers = List(1, 2, 3, 4, 5)
+	println(s"numbers = $numbers")
+	println(s"head = ${numbers.head}, tail = ${numbers.tail}")
+
+	// Common operations
+	val doubled = numbers.map(_ * 2)
+	val evens = numbers.filter(_ % 2 == 0)
+	val total = numbers.sum
+
+	println(s"doubled = $doubled")
+	println(s"evens = $evens")
+	println(s"sum = $total")
+
 	println("Generics")
 
 	// Generic function: works with any type T
