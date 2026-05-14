@@ -226,11 +226,17 @@ def basics(): Unit =
 	println(s"head = ${numbers.head}, tail = ${numbers.tail}")
 
 	// Common operations
+	// in map/filter, '_' means "the current element" (lambda shorthand).
 	val doubled = numbers.map(_ * 2)
+	// without shorthand (explicit parameter)
+	val doubledExplicit = numbers.map(n => n * 2)
 	val evens = numbers.filter(_ % 2 == 0)
+
+
 	val total = numbers.sum
 
 	println(s"doubled = $doubled")
+	println(s"doubledExplicit = $doubledExplicit")
 	println(s"evens = $evens")
 	println(s"sum = $total")
 
