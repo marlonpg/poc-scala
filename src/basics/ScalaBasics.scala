@@ -279,3 +279,16 @@ def basics(): Unit =
 
 	val adultCheck = parseAge("20").map(age => age >= 18)
 	println(s"adultCheck = $adultCheck") // Right(true)
+
+	//Future: async computation that completes later
+	import scala.concurrent.Future
+	import scala.concurrent.Await
+	import scala.concurrent.duration._
+	import scala.concurrent.ExecutionContext.Implicits.global
+
+	def fetchUserName(id: Int): Future[String] =
+		Future { s"user-$id" }
+
+	println("\nFuture:")
+	val userFuture = fetchUserName(1).map(name => s"Hello, $name")
+	println(Await.result(userFuture, 2.seconds)) // Hello, user-1
