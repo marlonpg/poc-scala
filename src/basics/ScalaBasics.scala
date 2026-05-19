@@ -240,6 +240,17 @@ def basics(): Unit =
 	println(s"evens = $evens")
 	println(s"sum = $total")
 
+	println("Map in Scala")
+
+	// Map stores key-value pairs and is immutable by default
+	val ages = Map("Alice" -> 30, "Bob" -> 25)
+	println(s"ages = $ages")
+	println(s"Alice age = ${ages("Alice")}")
+	println(s"Carol age = ${ages.getOrElse("Carol", 0)}")
+
+	val updatedAges = ages + ("Carol" -> 28)
+	println(s"updated ages = $updatedAges")
+
 	println("Generics")
 
 	// Generic function: works with any type T
