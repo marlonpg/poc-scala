@@ -29,7 +29,7 @@ scala-cli run src/basics/Variables.scala
   * [X] Future
   * [X] List
   * [X] Map
-* For Comprehensions  
+* [X] For Comprehensions  
 * Mutable and Immutable Collections
 * Scala Test
 * Scala Check
