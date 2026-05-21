@@ -251,6 +251,16 @@ def basics(): Unit =
 	val updatedAges = ages + ("Carol" -> 28)
 	println(s"updated ages = $updatedAges")
 
+	println("For Comprehensions")
+
+	val nums = List(1, 2, 3)
+	val letters = List("a", "b")
+	val pairs = for
+		n <- nums if n % 2 != 0
+		l <- letters
+		yield s"$l$n"
+	println(s"pairs = $pairs")
+
 	println("Generics")
 
 	// Generic function: works with any type T
