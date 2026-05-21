@@ -28,7 +28,7 @@ scala-cli run src/basics/Variables.scala
   * [X] Either
   * [X] Future
   * [X] List
-  * Map
+  * [X] Map
 * For Comprehensions  
 * Mutable and Immutable Collections
 * Scala Test
