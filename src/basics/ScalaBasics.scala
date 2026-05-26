@@ -254,13 +254,11 @@ def basics(): Unit =
 	println("For Comprehensions")
 	val nums = List(1, 2, 3)
 	val letters = List("a", "b")
-	// For each odd number and each letter, build a combined string
-	val pairs = for
-		// First generator with a guard (keeps only odd numbers)
-		n <- nums if n % 2 != 0
-		// Second generator (cartesian combination with remaining numbers)
-		l <- letters
-		// yield returns the new collection
+	// For each odd number and each letter, build a combined string.
+	val pairs =
+		for
+			n <- nums if n % 2 != 0
+			l <- letters
 		yield s"$l$n"
 	println(s"pairs = $pairs")
 
