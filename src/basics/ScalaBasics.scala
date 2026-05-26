@@ -264,6 +264,19 @@ def basics(): Unit =
 		yield s"$l$n"
 	println(s"pairs = $pairs")
 
+	println("Mutable and Immutable Collections")
+
+	// Immutable: operations create a new collection
+	val immutableNums = List(1, 2, 3)
+	val immutableUpdated = immutableNums :+ 4
+	println(s"immutable original = $immutableNums")
+	println(s"immutable updated = $immutableUpdated")
+
+	// Mutable: operations update the same collection instance
+	val mutableNums = scala.collection.mutable.ArrayBuffer(1, 2, 3)
+	mutableNums += 4
+	println(s"mutable updated = $mutableNums")
+
 	println("Generics")
 
 	// Generic function: works with any type T
