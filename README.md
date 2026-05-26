@@ -30,7 +30,7 @@ scala-cli run src/basics/Variables.scala
   * [X] List
   * [X] Map
 * [X] For Comprehensions  
-* Mutable and Immutable Collections
+* [X] Mutable and Immutable Collections
 * Scala Test
 * Scala Check
 * Higher Order Functions
