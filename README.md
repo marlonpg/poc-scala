@@ -31,7 +31,7 @@ scala-cli run src/basics/Variables.scala
   * [X] Map
 * [X] For Comprehensions  
 * [X] Mutable and Immutable Collections
-* Scala Test
+* [X] Scala Test
 * Scala Check
 * Higher Order Functions
 * Currying
