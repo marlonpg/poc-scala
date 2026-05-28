@@ -1,4 +1,5 @@
 //> using scala 3.8.3
+//> using dep org.scalacheck::scalacheck::1.18.1
 
 import java.time.LocalDate
 
@@ -274,6 +275,21 @@ def basics(): Unit =
 	val mutableNums = scala.collection.mutable.ArrayBuffer(1, 2, 3)
 	mutableNums += 4
 	println(s"mutable updated = $mutableNums")
+
+	println("ScalaCheck")
+
+	// ScalaCheck is property-based testing: instead of one fixed example, it tries many generated inputs.
+	import org.scalacheck.Gen
+	import org.scalacheck.Prop.forAll
+	// Example: applying a discount should never make a valid price go up.
+	def applyDiscount(price: Int, percent: Int): Int =
+		price - (price * percent / 100)
+	val priceGen = Gen.choose(0, 10000)
+	val percentGen = Gen.choose(0, 100)
+	val discountNeverIncreasesPrice = forAll(priceGen, percentGen) { (price, percent) =>
+		applyDiscount(price, percent) <= price
+	}
+	discountNeverIncreasesPrice.check()
 
 	println("Generics")
 
