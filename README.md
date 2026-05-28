@@ -32,7 +32,7 @@ scala-cli run src/basics/Variables.scala
 * [X] For Comprehensions  
 * [X] Mutable and Immutable Collections
 * [X] Scala Test
-* Scala Check
+* [X] Scala Check
 * Higher Order Functions
 * Currying
 * Partial Functions
