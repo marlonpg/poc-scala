@@ -291,6 +291,17 @@ def basics(): Unit =
 	}
 	discountNeverIncreasesPrice.check()
 
+	println("Higher Order Functions")
+
+	// Takes a function as parameter
+	def transform(values: List[Int], f: Int => Int): List[Int] = values.map(f)
+	println(s"transform double = ${transform(List(1, 2, 3), _ * 2)}")
+
+	// Returns a function
+	def multiplier(factor: Int): Int => Int = x => x * factor
+	val times3 = multiplier(3)
+	println(s"times3(4) = ${times3(4)}")
+
 	println("Generics")
 
 	// Generic function: works with any type T
