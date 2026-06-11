@@ -302,6 +302,17 @@ def basics(): Unit =
 	val times3 = multiplier(3)
 	println(s"times3(4) = ${times3(4)}")
 
+	println("Currying")
+
+	// Curried function: takes parameters one at a time
+	def addCurried(x: Int)(y: Int): Int = x + y
+	println(s"addCurried(2)(3) = ${addCurried(2)(3)}")
+
+	// Partial application: bind one parameter, get back a function
+	val add10 = addCurried(10)
+	println(s"add10(5) = ${add10(5)}")
+	println(s"add10(20) = ${add10(20)}")
+
 	println("Generics")
 
 	// Generic function: works with any type T
