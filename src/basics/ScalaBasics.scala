@@ -313,6 +313,21 @@ def basics(): Unit =
 	println(s"add10(5) = ${add10(5)}")
 	println(s"add10(20) = ${add10(20)}")
 
+	println("Partial Functions")
+
+	// A partial function is only defined for some inputs
+	val divide: PartialFunction[Int, Double] = {
+		case divisor if divisor != 0 => 10.0 / divisor
+	}
+	println(s"divide.isDefinedAt(2) = ${divide.isDefinedAt(2)}")
+	println(s"divide.isDefinedAt(0) = ${divide.isDefinedAt(0)}")
+	println(s"divide(2) = ${divide(2)}")
+
+	// Use collect with partial functions to filter and transform
+	val numbers = List(2, 0, 5, 0, 10)
+	val results = numbers.collect(divide)
+	println(s"collect results = $results")
+
 	println("Generics")
 
 	// Generic function: works with any type T
