@@ -316,17 +316,17 @@ def basics(): Unit =
 	println("Partial Functions")
 
 	// A partial function is only defined for some inputs
-	val divide: PartialFunction[Int, Double] = {
+	val dividePartial: PartialFunction[Int, Double] = {
 		case divisor if divisor != 0 => 10.0 / divisor
 	}
-	println(s"divide.isDefinedAt(2) = ${divide.isDefinedAt(2)}")
-	println(s"divide.isDefinedAt(0) = ${divide.isDefinedAt(0)}")
-	println(s"divide(2) = ${divide(2)}")
+	println(s"dividePartial.isDefinedAt(2) = ${dividePartial.isDefinedAt(2)}")
+	println(s"dividePartial.isDefinedAt(0) = ${dividePartial.isDefinedAt(0)}")
+	println(s"dividePartial(2) = ${dividePartial(2)}")
 
 	// Use collect with partial functions to filter and transform
-	val numbers = List(2, 0, 5, 0, 10)
-	val results = numbers.collect(divide)
-	println(s"collect results = $results")
+	val testNumbers = List(2, 0, 5, 0, 10)
+	val pfResults = testNumbers.collect(dividePartial)
+	println(s"collect results = $pfResults")
 
 	println("Generics")
 
