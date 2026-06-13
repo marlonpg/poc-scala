@@ -35,7 +35,7 @@ scala-cli run src/basics/Variables.scala
 * [X] Scala Check
 * [X] Higher Order Functions
 * [X] Currying
-* Partial Functions
+* [X] Partial Functions
 * Type Classes
 * Tail Recursion
 * Reflection
