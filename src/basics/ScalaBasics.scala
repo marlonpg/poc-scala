@@ -328,6 +328,22 @@ def basics(): Unit =
 	val pfResults = testNumbers.collect(dividePartial)
 	println(s"collect results = $pfResults")
 
+	println("Tail Recursion")
+
+	// Regular recursion: recursive call is not the last operation
+	def sumRegular(n: Int): Int =
+		if n == 0 then 0
+		else n + sumRegular(n - 1)
+
+	println(s"sumRegular(5) = ${sumRegular(5)}")
+
+	// Tail recursion: recursive call is the last operation, reuses stack frame
+	def sumTailRec(n: Int, acc: Int = 0): Int =
+		if n == 0 then acc
+		else sumTailRec(n - 1, acc + n)
+
+	println(s"sumTailRec(5) = ${sumTailRec(5)}")
+
 	println("Generics")
 
 	// Generic function: works with any type T
