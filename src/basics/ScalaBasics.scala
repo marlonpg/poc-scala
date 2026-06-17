@@ -344,6 +344,26 @@ def basics(): Unit =
 
 	println(s"sumTailRec(5) = ${sumTailRec(5)}")
 
+	println("Type Classes")
+
+	// Type class: describes behavior for a type without modifying the type
+	trait Show[T]:
+		def show(value: T): String
+
+	// Provide implicit instances for different types
+	implicit val intShow: Show[Int] = new Show[Int]:
+		def show(value: Int): String = s"Int($value)"
+
+	implicit val stringShow: Show[String] = new Show[String]:
+		def show(value: String): String = s"String($value)"
+
+	// Use type class via implicit parameter
+	def printShow[T](value: T)(implicit shower: Show[T]): Unit =
+		println(shower.show(value))
+
+	printShow(42)
+	printShow("hello")
+
 	println("Generics")
 
 	// Generic function: works with any type T
